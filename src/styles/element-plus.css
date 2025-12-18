@@ -1,0 +1,9 @@
+.el-card {
+  border-radius: 16px;
+  box-shadow: none !important;
+  border-color: #D4D4D8 !important;
+}
+
+.el-card__header {
+  border: none;
+}
