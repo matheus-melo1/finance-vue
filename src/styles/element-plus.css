@@ -7,3 +7,15 @@
 .el-card__header {
   border: none;
 }
+
+.el-input__wrapper {
+  border-radius: 25px;
+}
+
+.el-input-group__prepend {
+  border-radius: 25px 0 0 25px !important;
+}
+
+.el-input-group__append {
+  border-radius: 0px 25px 25px 0px !important;
+}

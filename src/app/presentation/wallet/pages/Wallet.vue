@@ -4,17 +4,21 @@ import Balance from "../components/organims/Balance.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import ExpensesMonth from "../components/organims/ExpensesMonth.vue";
 import Cards from "../components/organims/Cards.vue";
+import Transactions from "../components/organims/Transactions.vue";
 
 </script>
 
 <template>
-  <section class="w-full h-full flex gap-4">
-    <div class="w-140 h-full flex flex-col gap-4">
+  <section class="w-full h-full grid grid-cols-[32%_28%_38%] gap-6">
+    <div class="w-full h-full flex flex-col gap-4">
       <Balance />
       <ExpensesMonth />
     </div>
-    <div class="w-96 h-full flex flex-col gap-4">
+    <div class="w-full h-full flex flex-col gap-4">
       <Cards />
+    </div>
+    <div class="w-full h-full flex flex-col gap-4">
+      <Transactions />
     </div>
   </section>
 </template>

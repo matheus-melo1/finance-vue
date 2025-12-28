@@ -4,7 +4,7 @@ import {
   type RouteRecordRaw,
 } from "vue-router";
 import type { Component } from "vue";
-import { LayoutDashboard, Wallet } from "lucide-vue-next";
+import { CreditCard, Wallet } from "lucide-vue-next";
 
 type RouteRecordRawModified = Array<RouteRecordRaw & { icon: Component }>;
 
@@ -14,6 +14,12 @@ export const routesProtected: RouteRecordRawModified = [
     name: "Carteira",
     component: () => import("../presentation/wallet/pages/Wallet.vue"),
     icon: Wallet,
+  },
+  {
+    path: "/cards",
+    name: "Cartões",
+    component: () => import("../presentation/wallet/pages/Wallet.vue"),
+    icon: CreditCard,
   },
 ];
 

@@ -40,7 +40,7 @@ const { open, toggleOpen, handleLogout, isSelected, pathname, navigate } = useAp
       </div>
 
       <div class="px-2 py-2 h-full flex flex-col justify-between gap-1.5 max-md:flex-row">
-        <div class="w-full flex flex-col items-start gap-1.5 max-md:flex-row">
+        <div class="w-full flex flex-col items-start gap-0 max-md:flex-row">
           <div :class="['w-full flex my-3', open ? 'justify-end' : 'justify-center']">
             <button class="text-muted-foreground cursor-pointer max-md:hidden" @click="toggleOpen">
               <PanelRightOpen v-if="open" class="w-5 h-5" />
