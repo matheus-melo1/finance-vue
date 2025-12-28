@@ -2,7 +2,7 @@
 import { useCard } from "./composables/useCard";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { EffectCards } from 'swiper/modules'
-import { Plus, CreditCard, ChevronRight, ChevronLeft } from "lucide-vue-next";
+import { Plus, ChevronRight, ChevronLeft } from "lucide-vue-next";
 import CreditCardComponent from "../molecules/CreditCard.vue";
 import DrawerCreateCreditCard from "../../../../../components/organisms/drawerCreditCard/drawer-create-credit-card.vue";
 
