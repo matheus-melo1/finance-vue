@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { CreditCard } from "lucide-vue-next";
-import type { Card } from "../../types/models/Card.model";
 import { CardColor } from "../../types/enum/CardColor.enum";
 import { CardType } from "../../types/enum/CardType.enum";
 import { format } from "date-fns";
+import type { Card } from "@/types/models/Card.model";
 
 interface CardsProps {
   card: Card;

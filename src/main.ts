@@ -10,8 +10,15 @@ import router from "./app/router";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/nunito/700.css";
+import { QueryClient, VueQueryPlugin } from "@tanstack/vue-query";
+import { createPinia } from "pinia";
 
 const app = createApp(App);
+const queryClient = new QueryClient();
+const pinia = createPinia();
+
 app.use(ElementPlus);
 app.use(router);
+app.use(pinia);
+app.use(VueQueryPlugin, { queryClient });
 app.mount("#app");

@@ -2,10 +2,9 @@ import { ref } from "vue";
 import { Swiper as SwiperType } from "swiper";
 import type { Card } from "../../../types/models/Card.model";
 import { CardType } from "../../../types/enum/CardType.enum";
-import { CardColor } from "../../../types/enum/CardColor.enum";
 
 export const useCard = () => {
-  const swiperRef = ref<SwiperType | null>(null);
+  const swiperRef = ref<SwiperType>();
 
   const onSwiper = (swiper: SwiperType) => {
     swiperRef.value = swiper;

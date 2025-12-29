@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import type { Transaction } from "@/types/models/Transaction.model";
+import { formatPrice } from "@/utils/format-price";
+import { format } from "date-fns";
 import { ShoppingBag } from "lucide-vue-next";
+
+interface TransactionCardProps {
+  transaction: Transaction
+}
+
+const props = defineProps<TransactionCardProps>();
+
 </script>
 
 <template>
@@ -10,12 +20,12 @@ import { ShoppingBag } from "lucide-vue-next";
       </div>
       <div class="flex flex-col items-start">
         <div>
-          <el-text tag="b">Paypal</el-text>
+          <el-text tag="b">{{ transaction.name }}</el-text>
         </div>
-        <el-text>25 Fev 2022, 12:07</el-text>
+        <el-text>{{ format(transaction.date, "dd/MM/yyyy, HH:mm") }}</el-text>
       </div>
     </div>
 
-    <el-text>R$ 100,00</el-text>
+    <el-text>{{ formatPrice(transaction.amount) }}</el-text>
   </div>
 </template>

@@ -3,6 +3,15 @@ import { CalendarClock, ReceiptText, TrendingUp, TrendingDown, ArrowLeftRight } 
 import ButtonBalance from "../atoms/ButtonBalance.vue";
 import ButtonBalanceTransfer from "../atoms/ButtonBalanceTransfer.vue";
 import SpaccingBar from "../atoms/SpaccingBar.vue";
+import type { DashboardBalance, DashboardMonthlySummary } from "@/types/models/DashboardWallet.model";
+import { formatPrice } from "@/utils/format-price";
+
+interface BalanceProps {
+  balance: DashboardBalance | undefined;
+  monthlySummary: DashboardMonthlySummary | undefined;
+}
+
+const props = defineProps<BalanceProps>()
 
 </script>
 
@@ -14,7 +23,9 @@ import SpaccingBar from "../atoms/SpaccingBar.vue";
         <p>Saldo disponível</p>
         <div class="flex items-start gap-2">
           <el-text class="text-start! text-zinc-400! font-semibold">R$</el-text>
-          <el-text class="text-5xl! text-start! font-medium" tab="b">35.530,20</el-text>
+          <el-text class="text-5xl! text-start! font-medium" tab="b">
+            {{ formatPrice(balance?.total ?? 0).slice(2) }}
+          </el-text>
         </div>
       </div>
 
@@ -31,7 +42,7 @@ import SpaccingBar from "../atoms/SpaccingBar.vue";
 
     <div
       class="w-full h-fit flex gap-7 justify-start items-start p-6 rounded-2xl border-b border-l border-r border-zinc-300">
-      <SpaccingBar :income="1000" :expenses="500" />
+      <SpaccingBar :income="monthlySummary?.income ?? 0" :expenses="monthlySummary?.expenses ?? 0" />
     </div>
   </div>
 </template>

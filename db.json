@@ -1,0 +1,79 @@
+{
+  "dashboard": {
+    "balance": {
+      "total": 35530.20,
+      "currency": "BRL"
+    },
+    "monthly_summary": {
+      "income": 28000.00,
+      "expenses": 9500.00
+    },
+    "recurring_bills": [
+      {
+        "id": "bill_1",
+        "service_name": "Netflix",
+        "amount": 100.00,
+        "due_date": "2021-12-31",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+      },
+      {
+        "id": "bill_2",
+        "service_name": "HBO MAX",
+        "amount": 40.00,
+        "due_date": "2021-12-31",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Max_Logo.svg"
+      }
+    ],
+    "credit_section": {
+      "available_limit": 4530.20,
+      "cards": [
+        {
+          "id": "card_1",
+          "name": "Matheus Melo",
+          "brand": "mastercard",
+          "last_digits": "3942",
+          "expiration_date": "2026-10-01",
+          "color": "#635BFF"
+        },
+        {
+          "id": "card_2",
+          "name": "Matheus Melo",
+          "brand": "visa",
+          "last_digits": "1289",
+          "expiration_date": "2025-05-15",
+          "color": "#2D2D2D"
+        }
+      ]
+    },
+    "recent_transactions": [
+      {
+        "id": "tx_1",
+        "name": "Paypal",
+        "amount": 100.00,
+        "date": "2022-02-25T12:07:00",
+        "type": "expense"
+      },
+      {
+        "id": "tx_2",
+        "name": "Paypal",
+        "amount": 100.00,
+        "date": "2022-02-25T12:07:00",
+        "type": "expense"
+      },
+      {
+        "id": "tx_3",
+        "name": "Paypal",
+        "amount": 100.00,
+        "date": "2022-02-25T12:07:00",
+        "type": "expense"
+      },
+      {
+        "id": "tx_4",
+        "name": "Paypal",
+        "amount": 100.00,
+        "date": "2022-02-25T12:07:00",
+        "type": "expense"
+      }
+    ]
+  }
+}

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import { useRouter, useRoute } from "vue-router";
 import {
   PanelRightOpen,
   PanelRightClose,
@@ -13,7 +11,7 @@ import { routesProtected } from "@/app/router";
 interface SidebarProps { }
 const props = defineProps<SidebarProps>();
 
-const { open, toggleOpen, handleLogout, isSelected, pathname, navigate } = useAppSidebar();
+const { open, toggleOpen, handleLogout, isSelected, navigate } = useAppSidebar();
 
 </script>
 

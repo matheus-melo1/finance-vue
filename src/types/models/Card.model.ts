@@ -2,7 +2,7 @@ export interface Card {
   id: string;
   name: string;
   brand: string;
-  type: string;
-  expiration_date: Date;
+  last_digits: string;
+  expiration_date: string;
   color: string;
 }

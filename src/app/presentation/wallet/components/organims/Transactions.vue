@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import type { Transaction } from "@/types/models/Transaction.model";
 import TransactionCard from "../molecules/TransactionCard.vue";
+
+interface TransactionsProps {
+  transactions: Transaction[] | undefined
+}
+
+const props = defineProps<TransactionsProps>();
+
 </script>
 
 <template>
@@ -24,10 +32,7 @@ import TransactionCard from "../molecules/TransactionCard.vue";
       </div>
 
       <div class="flex flex-col overflow-y-auto gap-4 py-3">
-        <TransactionCard />
-        <TransactionCard />
-        <TransactionCard />
-        <TransactionCard />
+        <TransactionCard v-for="transaction in transactions" :key="transaction.id" :transaction="transaction" />
       </div>
     </template>
   </el-card>

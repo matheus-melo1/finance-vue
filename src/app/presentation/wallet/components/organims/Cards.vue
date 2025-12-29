@@ -5,21 +5,29 @@ import { EffectCards } from 'swiper/modules'
 import { Plus, ChevronRight, ChevronLeft } from "lucide-vue-next";
 import CreditCardComponent from "../molecules/CreditCard.vue";
 import DrawerCreateCreditCard from "../../../../../components/organisms/drawerCreditCard/drawer-create-credit-card.vue";
+import type { DashboardCreditSection } from "@/types/models/DashboardWallet.model";
+import { formatPrice } from "@/utils/format-price";
 
-const { swiperRef, onSwiper, onNextSwiper, onPrevSwiper, cards } = useCard()
+interface CardsProps {
+  creditCards: DashboardCreditSection | undefined;
+}
+
+const props = defineProps<CardsProps>();
+
+const { swiperRef, onSwiper, onNextSwiper, onPrevSwiper } = useCard()
 
 </script>
 
 <template>
   <el-card>
-    <template #header>
-      Cartões
-    </template>
+    <!-- <template #header> -->
+    <!--   Cartões -->
+    <!-- </template> -->
 
-    <div class="w-full flex flex-col gap-4 justify-center items-start">
+    <div class="w-full h-full flex flex-col gap-4 justify-center items-start">
       <swiper class="w-80! h-full!" :slides-per-view="1" :ref="swiperRef" :effect="'cards'" :loop="true"
         :grabCursor="true" :modules="[EffectCards]" @swiper="onSwiper">
-        <swiper-slide v-for="card in cards" :key="card.id">
+        <swiper-slide v-for="card in creditCards?.cards" :key="card.id">
           <CreditCardComponent :card="card" />
         </swiper-slide>
       </swiper>
@@ -30,7 +38,8 @@ const { swiperRef, onSwiper, onNextSwiper, onPrevSwiper, cards } = useCard()
         <div className="w-full flex justify-between">
           <div class="flex items-start gap-2">
             <el-text class="text-start! text-zinc-400! font-semibold">R$</el-text>
-            <el-text class="text-2xl! text-start! font-medium" tab="b">4.530,20</el-text>
+            <el-text class="text-2xl! text-start! font-medium" tab="b">{{ formatPrice(creditCards?.available_limit ??
+              0).slice(2) }}</el-text>
           </div>
 
           <div class="flex gap-0">
